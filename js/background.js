@@ -7,9 +7,9 @@ class ParticleBackground {
     this.mouse = { x: null, y: null, radius: 150 };
     
     this.colors = [
-      'rgba(16, 185, 129, 0.05)', // Transparent Emerald
-      'rgba(245, 158, 11, 0.04)',  // Transparent Amber
-      'rgba(251, 191, 36, 0.03)',  // Transparent Gold
+      'rgba(5, 150, 105, 0.06)',  // Translucent Emerald
+      'rgba(217, 119, 6, 0.05)',  // Translucent Amber
+      'rgba(180, 83, 9, 0.04)',   // Translucent Gold
     ];
     
     this.init();
