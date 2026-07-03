@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Quigs Kava Lounge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/background.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="nav-logo">
+        <span class="nav-title">Quigs</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Content Wrapper -->
+  <main class="content-wrapper">
+    <section class="container" style="padding-bottom: 20px;">
+      <div class="section-title-wrapper animate-on-scroll">
+        <span class="section-subtitle">Reach Out</span>
+        <h1 class="section-title">Visit the <span class="gradient-text">Sanctuary</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.25rem; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Drop by, give us a call, or send us a message. We look forward to welcoming you.</p>
+      </div>
+    </section>
+
+    <!-- Contact details and map layout -->
+    <section class="container" style="padding-top: 0;">
+      <div class="contact-layout">
+        <!-- Info Column -->
+        <div class="contact-info-column animate-on-scroll">
+          <div class="glass-card info-item-box">
+            <div class="info-icon-wrapper icon-kava">📍</div>
+            <div>
+              <h3 class="info-title">Location</h3>
+              <p class="info-text">3407 Lithia Pinecrest Rd<br>Valrico, FL 33596</p>
+            </div>
+          </div>
+
+          <div class="glass-card info-item-box">
+            <div class="info-icon-wrapper icon-kratom">🕒</div>
+            <div>
+              <h3 class="info-title">Hours</h3>
+              <p class="info-text">Monday - Saturday: 6:30 AM - 10:00 PM</p>
+              <p class="info-text">Sunday: 7:30 AM - 10:00 PM</p>
+            </div>
+          </div>
+
+          <div class="glass-card info-item-box">
+            <div class="info-icon-wrapper icon-vibes">📞</div>
+            <div>
+              <h3 class="info-title">Contact Info</h3>
+              <p class="info-text">Phone: (813) 324-9472</p>
+              <p class="info-text">Email: hunter@quigskavalounge.com</p>
+            </div>
+          </div>
+
+          <div class="glass-card map-card">
+            <iframe title="Google Map - Quigs Kava Lounge" src="https://www.google.com/maps?q=3407%20Lithia%20Pinecrest%20Rd%2C%20Valrico%2C%20FL%2033596&amp;output=embed" class="map-iframe" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=3407%20Lithia%20Pinecrest%20Rd%2C%20Valrico%2C%20FL%2033596" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+            Get Directions
+          </a>
+        </div>
+
+        <!-- Form Column -->
+        <div class="glass-card contact-form-card animate-on-scroll delay-2">
+          <h2 class="contact-form-title gradient-text">Send a Message</h2>
+          <p class="contact-form-subtitle">Have questions or feedback? Drop us a line below and we will respond as soon as possible.</p>
+          
+          <form class="contact-form-element">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Name</label>
+              <input type="text" id="contact-name" class="form-control" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="form-control" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message</label>
+              <textarea id="contact-message" class="form-control" required placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="footer-brand-logo">
+        <p class="footer-desc">Your premier botanical sanctuary for premium kava, lab-tested kratom, and relaxed community vibes.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Sanctuary Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Visit Us</h4>
+        <p class="footer-desc" style="margin-bottom: 12px;">3407 Lithia Pinecrest Rd<br>Valrico, FL 33596</p>
+        <p class="footer-desc" style="margin-bottom: 4px;">Phone: (813) 324-9472</p>
+        <p class="footer-desc">Email: hunter@quigskavalounge.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Quigs Kava Lounge. All rights reserved.</p>
+      <p class="footer-notice">Enjoy responsibly. Must be 18+ to purchase botanical products.</p>
+    </div>
+  </footer>
+</body>
+</html>

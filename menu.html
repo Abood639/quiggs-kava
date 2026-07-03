@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu | Quigs Kava Lounge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/background.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="nav-logo">
+        <span class="nav-title">Quigs</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Content Wrapper -->
+  <main class="content-wrapper">
+    <section class="container" style="padding-bottom: 20px;">
+      <div class="section-title-wrapper animate-on-scroll">
+        <span class="section-subtitle">Botanical Offerings</span>
+        <h1 class="section-title">Discover Our <span class="gradient-text">Blends</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.25rem; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Explore our selections, from traditional shells to modern elixirs.</p>
+      </div>
+    </section>
+
+    <!-- Tabs Filter -->
+    <section class="container" style="padding-top: 0; padding-bottom: 20px;">
+      <div class="menu-tabs animate-on-scroll">
+        <button class="tab-btn active" data-category="all">All Items</button>
+        <button class="tab-btn" data-category="kava">Kava</button>
+        <button class="tab-btn" data-category="kratom">Kratom</button>
+        <button class="tab-btn" data-category="coffee">Coffee</button>
+        <button class="tab-btn" data-category="refreshers">Refreshers</button>
+      </div>
+    </section>
+
+    <!-- Menu Grid -->
+    <section class="container" style="padding-top: 0;">
+      <div class="menu-grid">
+        <!-- Item 1: Euphoric Kratom Tea -->
+        <div class="glass-card menu-item animate-on-scroll" data-category="kratom">
+          <div class="item-img-container">
+            <img src="assets/kratom_tea.jpg" alt="Euphoric Kratom Tea" class="item-img">
+          </div>
+          <div class="item-header">
+            <h3 class="item-name">Euphoric Kratom Tea</h3>
+            <span class="item-price">$8.00</span>
+          </div>
+          <p class="item-desc">Our signature premium kratom brew, crafted for a state of relaxed euphoria and gentle focus.</p>
+        </div>
+
+        <!-- Item 2: Extra Strength Witches Brew -->
+        <div class="glass-card menu-item animate-on-scroll" data-category="kratom">
+          <div class="item-img-container">
+            <img src="assets/witches_brew.jpg" alt="Extra Strength Witches Brew" class="item-img">
+          </div>
+          <div class="item-header">
+            <h3 class="item-name">Extra Strength Witches Brew</h3>
+            <span class="item-price">$11.00</span>
+          </div>
+          <p class="item-desc">A concentrated, potent kratom infusion designed for experienced botanical enthusiasts seeking deeper relaxation.</p>
+        </div>
+
+        <!-- Item 3: Traditional Noble Kava -->
+        <div class="glass-card menu-item animate-on-scroll" data-category="kava">
+          <div class="item-img-container">
+            <img src="assets/kava_bowl.png" alt="Traditional Noble Kava" class="item-img">
+          </div>
+          <div class="item-header">
+            <h3 class="item-name">Traditional Noble Kava</h3>
+            <span class="item-price">$7.00</span>
+          </div>
+          <p class="item-desc">Premium noble kava root traditionally prepared and served in a coconut shell. Earthy, calming, and grounding.</p>
+        </div>
+
+        <!-- Item 4: Nitro Cold Brew Coffee -->
+        <div class="glass-card menu-item animate-on-scroll" data-category="coffee">
+          <div class="item-img-container">
+            <img src="assets/coffee.png" alt="Nitro Cold Brew Coffee" class="item-img">
+          </div>
+          <div class="item-header">
+            <h3 class="item-name">Nitro Cold Brew</h3>
+            <span class="item-price">$6.00</span>
+          </div>
+          <p class="item-desc">Rich, smooth cold brew infused with nitrogen for a velvety, creamy head. Provides clean, long-lasting daytime energy.</p>
+        </div>
+
+        <!-- Item 5: Lavender Botanical Refresher -->
+        <div class="glass-card menu-item animate-on-scroll" data-category="refreshers">
+          <div class="item-img-container">
+            <img src="assets/refresher.png" alt="Lavender Botanical Refresher" class="item-img">
+          </div>
+          <div class="item-header">
+            <h3 class="item-name">Lavender Refresher</h3>
+            <span class="item-price">$6.50</span>
+          </div>
+          <p class="item-desc">A sparkling botanical refresher infused with lavender extracts and natural botanicals to refresh the senses.</p>
+        </div>
+      </div>
+
+      <!-- Elixir Banner Menu -->
+      <div class="menu-banner animate-on-scroll">
+        <div class="elixirs-banner-card">
+          <div class="elixirs-banner-header">
+            <h2 class="elixirs-banner-title gradient-text">Euphoric Elixirs</h2>
+            <p class="elixirs-banner-subtitle">Premium botanical creations crafted by our master hosts.</p>
+          </div>
+          <div class="elixirs-banner-body">
+            <img src="assets/Euphoric_Elixir_Menu.png" alt="Euphoric Elixirs Menu Detail" class="elixirs-menu-img">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="footer-brand-logo">
+        <p class="footer-desc">Your premier botanical sanctuary for premium kava, lab-tested kratom, and relaxed community vibes.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Sanctuary Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Visit Us</h4>
+        <p class="footer-desc" style="margin-bottom: 12px;">3407 Lithia Pinecrest Rd<br>Valrico, FL 33596</p>
+        <p class="footer-desc" style="margin-bottom: 4px;">Phone: (813) 324-9472</p>
+        <p class="footer-desc">Email: hunter@quigskavalounge.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Quigs Kava Lounge. All rights reserved.</p>
+      <p class="footer-notice">Enjoy responsibly. Must be 18+ to purchase botanical products.</p>
+    </div>
+  </footer>
+</body>
+</html>

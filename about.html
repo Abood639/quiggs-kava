@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Quigs Kava Lounge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/background.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="nav-logo">
+        <span class="nav-title">Quigs</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Content Wrapper -->
+  <main class="content-wrapper">
+    <!-- Hero Header -->
+    <section class="container" style="padding-bottom: 20px;">
+      <div class="section-title-wrapper animate-on-scroll">
+        <span class="section-subtitle">Our Mission</span>
+        <h1 class="section-title">Welcome to <span class="gradient-text">Quigs</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.25rem; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Where tradition, quality, and community gather in every shell.</p>
+      </div>
+    </section>
+
+    <!-- Detailed Columns -->
+    <section class="container">
+      <div class="about-columns">
+        <div class="about-text animate-on-scroll">
+          <h2>The Botanical Sanctuary</h2>
+          <p>Quigs Kava Lounge is born out of a desire to create a true alternative social space. We believe in the power of botanical beverages to bring people together, spark deep conversations, and foster relaxation without the typical drawbacks of modern nightlife.</p>
+          <p>Our lounge provides a cozy environment where you can work during the day with high-speed Wi-Fi, decompress after a long shift, or share a traditionally prepared shell of kava with fellow patrons in the evening.</p>
+          
+          <h3>Traditional Kava Sourcing</h3>
+          <p>We source our kava root directly from established farmers in the Pacific islands, including Fiji, Vanuatu, and Tonga. Each strain is selected for its distinct noble qualities and is traditionally kneaded in small batches to preserve its natural active elements, offering a clean, relaxing experience.</p>
+        </div>
+        <div class="about-visual animate-on-scroll delay-2">
+          <img src="assets/lounge_vibe.png" alt="Quigs Lounge Interior" class="lounge-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Second Row -->
+    <section class="container" style="padding-top: 20px;">
+      <div class="about-columns" style="direction: rtl;">
+        <!-- Direction RTL to alternate image and text sides, with child content overriding alignment -->
+        <div class="about-text animate-on-scroll" style="direction: ltr; text-align: left;">
+          <h2>Lab-Tested Kratom Purity</h2>
+          <p>Quality and transparency guide our selection. Our premium kratom is sourced from sustainable Southeast Asian farms where leaves are harvested at optimal maturity. Every batch undergoes comprehensive lab testing to ensure freedom from contaminants and to verify consistent active levels.</p>
+          <p>Whether you seek a daytime boost of focused energy or an evening of soothing tranquility, our staff can guide you to the perfect strain and preparation method tailored to your personal preferences.</p>
+          
+          <h3>An Inclusive Community</h3>
+          <p>Quigs is more than a beverage bar. We are a collection of creatives, professionals, students, and neighbors. Our space is built on respect, inclusivity, and shared positive vibes. Stop by to read, connect, play a board game, or simply enjoy a quiet moment with a premium botanical tea.</p>
+        </div>
+        <div class="about-visual animate-on-scroll delay-2" style="direction: ltr;">
+          <img src="assets/kava_bowl.png" alt="Traditional Kava Bowl" class="lounge-img">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="footer-brand-logo">
+        <p class="footer-desc">Your premier botanical sanctuary for premium kava, lab-tested kratom, and relaxed community vibes.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Sanctuary Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Visit Us</h4>
+        <p class="footer-desc" style="margin-bottom: 12px;">3407 Lithia Pinecrest Rd<br>Valrico, FL 33596</p>
+        <p class="footer-desc" style="margin-bottom: 4px;">Phone: (813) 324-9472</p>
+        <p class="footer-desc">Email: hunter@quigskavalounge.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Quigs Kava Lounge. All rights reserved.</p>
+      <p class="footer-notice">Enjoy responsibly. Must be 18+ to purchase botanical products.</p>
+    </div>
+  </footer>
+</body>
+</html>

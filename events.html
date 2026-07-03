@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js')</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Happenings | Quigs Kava Lounge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/background.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="nav-logo">
+        <span class="nav-title">Quigs</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Content Wrapper -->
+  <main class="content-wrapper">
+    <section class="container" style="padding-bottom: 20px;">
+      <div class="section-title-wrapper animate-on-scroll">
+        <span class="section-subtitle">Weekly Happenings</span>
+        <h1 class="section-title">Community & <span class="gradient-text">Events</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.25rem; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Join us for weekly gatherings or check our interactive calendar to plan your next visit.</p>
+      </div>
+    </section>
+
+    <!-- Calendar Card -->
+    <section class="container animate-on-scroll" style="padding-top: 0;">
+      <div class="calendar-card">
+        <iframe title="Google Calendar - Quigs Kava Lounge" src="https://calendar.google.com/calendar/embed?src=quigskavalounge%40gmail.com&amp;ctz=America%2FNew_York" class="calendar-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- Weekly Events Grid -->
+    <section class="container weekly-events">
+      <div class="section-title-wrapper animate-on-scroll">
+        <span class="section-subtitle">Regular Gatherings</span>
+        <h2 class="section-title">Weekly Traditions</h2>
+      </div>
+      <div class="events-grid">
+        <div class="glass-card animate-on-scroll delay-1">
+          <span class="event-day">Mondays</span>
+          <h3 class="feature-title">Open Mic Night</h3>
+          <p class="feature-desc">Share your music, poetry, or comedy with our supportive community. Sign-ups begin at 7:00 PM.</p>
+          <p class="event-time">Time: 7:30 PM - 10:00 PM</p>
+        </div>
+        <div class="glass-card animate-on-scroll delay-2">
+          <span class="event-day">Wednesdays</span>
+          <h3 class="feature-title">Trivia Night</h3>
+          <p class="feature-desc">Assemble your team, test your knowledge, and compete for lounge credits and bragging rights.</p>
+          <p class="event-time">Time: 8:00 PM - 10:00 PM</p>
+        </div>
+        <div class="glass-card animate-on-scroll delay-3">
+          <span class="event-day">Fridays</span>
+          <h3 class="feature-title">Acoustic Sessions</h3>
+          <p class="feature-desc">Relax to live acoustic sets featuring local singer-songwriters. The perfect background for your weekend warmup.</p>
+          <p class="event-time">Time: 7:00 PM - 9:30 PM</p>
+        </div>
+        <div class="glass-card animate-on-scroll delay-4">
+          <span class="event-day">Sundays</span>
+          <h3 class="feature-title">Community Shells</h3>
+          <p class="feature-desc">Enjoy discounted traditionally prepared noble kava shells all day. Bring a book or a friend and decompress.</p>
+          <p class="event-time">Time: All Day</p>
+        </div>
+      </div>
+
+      <!-- Call to Action for Hosting -->
+      <div class="animate-on-scroll" style="text-align: center; margin-top: 60px;">
+        <button class="btn btn-primary open-modal-btn" data-target="booking-modal">Ask about hosting your event</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Booking Dialog -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h3 class="gradient-text" style="font-size: 1.75rem; margin-bottom: 8px;">Host Your Event</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Submit your request to host private gatherings or creative events in our lounge.</p>
+      
+      <form class="modal-form-element">
+        <div class="form-group">
+          <label class="form-label" for="modal-name">Name</label>
+          <input type="text" id="modal-name" class="form-control" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-email">Email</label>
+          <input type="email" id="modal-email" class="form-control" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-type">Event Details</label>
+          <input type="text" id="modal-type" class="form-control" required placeholder="e.g. Birthday, Art Show, Club Meetup">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="modal-message">Proposed Date & Size</label>
+          <textarea id="modal-message" class="form-control" required placeholder="Share your preferred date and estimated number of guests..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="assets/logo.png" alt="Quigs Kava Lounge" class="footer-brand-logo">
+        <p class="footer-desc">Your premier botanical sanctuary for premium kava, lab-tested kratom, and relaxed community vibes.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Sanctuary Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Visit Us</h4>
+        <p class="footer-desc" style="margin-bottom: 12px;">3407 Lithia Pinecrest Rd<br>Valrico, FL 33596</p>
+        <p class="footer-desc" style="margin-bottom: 4px;">Phone: (813) 324-9472</p>
+        <p class="footer-desc">Email: hunter@quigskavalounge.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Quigs Kava Lounge. All rights reserved.</p>
+      <p class="footer-notice">Enjoy responsibly. Must be 18+ to purchase botanical products.</p>
+    </div>
+  </footer>
+</body>
+</html>
