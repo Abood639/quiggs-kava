@@ -74,7 +74,7 @@ body {
   width: 45vw;
   height: 45vw;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, transparent 70%);
   filter: blur(80px);
   animation: float-glow 25s ease-in-out infinite alternate;
 }
@@ -86,7 +86,7 @@ body {
   width: 50vw;
   height: 50vw;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(4, 120, 87, 0.12) 0%, transparent 70%);
   filter: blur(100px);
   animation: float-glow 30s ease-in-out infinite alternate-reverse;
 }

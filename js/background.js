@@ -134,8 +134,8 @@ class ParticleBackground {
       this.canvas.width * 0.25,
       this.canvas.height * 0.3,
       180,
-      'rgba(4, 120, 87, 0.08)',
-      'rgba(4, 120, 87, 0.015)',
+      'rgba(4, 120, 87, 0.35)',
+      'rgba(4, 120, 87, 0.05)',
       0.001
     ));
     
@@ -143,8 +143,8 @@ class ParticleBackground {
       this.canvas.width * 0.75,
       this.canvas.height * 0.7,
       220,
-      'rgba(4, 120, 87, 0.07)',
-      'rgba(4, 120, 87, 0.01)',
+      'rgba(4, 120, 87, 0.30)',
+      'rgba(4, 120, 87, 0.04)',
       0.0008
     ));
     
@@ -152,8 +152,8 @@ class ParticleBackground {
       this.canvas.width * 0.8,
       this.canvas.height * 0.25,
       200,
-      'rgba(5, 150, 105, 0.08)',
-      'rgba(5, 150, 105, 0.015)',
+      'rgba(5, 150, 105, 0.35)',
+      'rgba(5, 150, 105, 0.05)',
       0.0012
     ));
 
@@ -161,8 +161,8 @@ class ParticleBackground {
       this.canvas.width * 0.3,
       this.canvas.height * 0.8,
       160,
-      'rgba(5, 150, 105, 0.06)',
-      'rgba(5, 150, 105, 0.01)',
+      'rgba(5, 150, 105, 0.30)',
+      'rgba(5, 150, 105, 0.04)',
       0.0015
     ));
   }
