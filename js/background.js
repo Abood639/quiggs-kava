@@ -1,16 +1,115 @@
+class MorphingBlob {
+  constructor(x, y, radius, colorStart, colorEnd, speed) {
+    this.x = x;
+    this.y = y;
+    this.baseRadius = radius;
+    this.radius = radius;
+    this.colorStart = colorStart;
+    this.colorEnd = colorEnd;
+    this.speed = speed;
+    
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    
+    // Create 8 perimeter points for morphing
+    this.points = [];
+    this.numPoints = 8;
+    for (let i = 0; i < this.numPoints; i++) {
+      this.points.push({
+        angle: (i / this.numPoints) * Math.PI * 2,
+        offset: Math.random() * Math.PI * 2,
+        currentRadius: this.radius,
+        targetRadius: this.radius
+      });
+    }
+  }
+
+  update(width, height, mouse, time) {
+    // Drifting motion
+    this.x += this.vx;
+    this.y += this.vy;
+
+    // Boundary bounces with soft cushion
+    const buffer = this.radius * 1.5;
+    if (this.x - buffer < 0) { this.x = buffer; this.vx *= -1; }
+    if (this.x + buffer > width) { this.x = width - buffer; this.vx *= -1; }
+    if (this.y - buffer < 0) { this.y = buffer; this.vy *= -1; }
+    if (this.y + buffer > height) { this.y = height - buffer; this.vy *= -1; }
+
+    // Deform points dynamically over time (organic morphing)
+    this.points.forEach((p, idx) => {
+      // Base morphing noise
+      const timeOffset = time * this.speed + p.offset;
+      let r = this.baseRadius + Math.sin(timeOffset) * (this.baseRadius * 0.25);
+      r += Math.cos(timeOffset * 1.7) * (this.baseRadius * 0.1);
+
+      // Mouse deform logic (pushing or pulling points)
+      if (mouse.x !== null && mouse.y !== null) {
+        const pointX = this.x + Math.cos(p.angle) * r;
+        const pointY = this.y + Math.sin(p.angle) * r;
+        const dx = pointX - mouse.x;
+        const dy = pointY - mouse.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < mouse.radius) {
+          const force = (mouse.radius - distance) / mouse.radius;
+          // Deform radius based on cursor proximity
+          r += force * (this.baseRadius * 0.35);
+        }
+      }
+
+      // Smooth interpolation to target radius
+      p.currentRadius += (r - p.currentRadius) * 0.1;
+    });
+  }
+
+  draw(ctx) {
+    ctx.save();
+    
+    // Draw fluid organic path using Bezier curves
+    ctx.beginPath();
+    const firstPoint = this.points[0];
+    let startX = this.x + Math.cos(firstPoint.angle) * firstPoint.currentRadius;
+    let startY = this.y + Math.sin(firstPoint.angle) * firstPoint.currentRadius;
+    ctx.moveTo(startX, startY);
+
+    for (let i = 0; i < this.numPoints; i++) {
+      const p1 = this.points[i];
+      const p2 = this.points[(i + 1) % this.numPoints];
+      
+      const p1x = this.x + Math.cos(p1.angle) * p1.currentRadius;
+      const p1y = this.y + Math.sin(p1.angle) * p1.currentRadius;
+      const p2x = this.x + Math.cos(p2.angle) * p2.currentRadius;
+      const p2y = this.y + Math.sin(p2.angle) * p2.currentRadius;
+
+      // Control points for smooth curves
+      const xc = (p1x + p2x) / 2;
+      const yc = (p1y + p2y) / 2;
+      ctx.quadraticCurveTo(p1x, p1y, xc, yc);
+    }
+    
+    ctx.closePath();
+
+    // Fill with soft multi-stop radial gradient
+    const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.baseRadius * 1.5);
+    gradient.addColorStop(0, this.colorStart);
+    gradient.addColorStop(0.5, this.colorEnd);
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
 class ParticleBackground {
   constructor() {
     this.canvas = document.getElementById('bg-canvas');
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
-    this.particles = [];
-    this.mouse = { x: null, y: null, radius: 150 };
-    
-    this.colors = [
-      'rgba(5, 150, 105, 0.06)',  // Translucent Emerald
-      'rgba(217, 119, 6, 0.05)',  // Translucent Amber
-      'rgba(180, 83, 9, 0.04)',   // Translucent Gold
-    ];
+    this.blobs = [];
+    this.mouse = { x: null, y: null, radius: 250 };
+    this.time = 0;
     
     this.init();
     this.animate();
@@ -28,12 +127,46 @@ class ParticleBackground {
   
   init() {
     this.resize();
-    const particleCount = Math.min(40, Math.floor((this.canvas.width * this.canvas.height) / 30000));
-    this.particles = [];
+    this.blobs = [];
     
-    for (let i = 0; i < particleCount; i++) {
-      this.particles.push(this.createParticle());
-    }
+    // Create large, premium morphing blobs
+    // Emerald green blobs
+    this.blobs.push(new MorphingBlob(
+      this.canvas.width * 0.25,
+      this.canvas.height * 0.3,
+      180,
+      'rgba(5, 150, 105, 0.07)',
+      'rgba(5, 150, 105, 0.02)',
+      0.001
+    ));
+    
+    this.blobs.push(new MorphingBlob(
+      this.canvas.width * 0.75,
+      this.canvas.height * 0.7,
+      220,
+      'rgba(5, 150, 105, 0.06)',
+      'rgba(5, 150, 105, 0.01)',
+      0.0008
+    ));
+    
+    // Amber/Gold blobs
+    this.blobs.push(new MorphingBlob(
+      this.canvas.width * 0.8,
+      this.canvas.height * 0.25,
+      200,
+      'rgba(217, 119, 6, 0.06)',
+      'rgba(217, 119, 6, 0.01)',
+      0.0012
+    ));
+
+    this.blobs.push(new MorphingBlob(
+      this.canvas.width * 0.3,
+      this.canvas.height * 0.8,
+      160,
+      'rgba(180, 83, 9, 0.06)',
+      'rgba(180, 83, 9, 0.01)',
+      0.0015
+    ));
   }
   
   resize() {
@@ -41,60 +174,16 @@ class ParticleBackground {
     this.canvas.height = window.innerHeight;
   }
   
-  createParticle() {
-    return {
-      x: Math.random() * this.canvas.width,
-      y: Math.random() * this.canvas.height,
-      radius: Math.random() * 80 + 40,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      color: this.colors[Math.floor(Math.random() * this.colors.length)],
-      pulse: Math.random() * Math.PI,
-      pulseSpeed: Math.random() * 0.005 + 0.002
-    };
-  }
-  
   animate() {
-    requestAnimationFrame(() => this.animate());
+    this.time += 1;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     
-    this.particles.forEach((p) => {
-      // Move particle
-      p.x += p.vx;
-      p.y += p.vy;
-      p.pulse += p.pulseSpeed;
-      
-      // Boundaries
-      if (p.x - p.radius > this.canvas.width) p.x = -p.radius;
-      if (p.x + p.radius < 0) p.x = this.canvas.width + p.radius;
-      if (p.y - p.radius > this.canvas.height) p.y = -p.radius;
-      if (p.y + p.radius < 0) p.y = this.canvas.height + p.radius;
-      
-      // Mouse Interaction (slow repulsion)
-      if (this.mouse.x !== null && this.mouse.y !== null) {
-        const dx = p.x - this.mouse.x;
-        const dy = p.y - this.mouse.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < this.mouse.radius) {
-          const force = (this.mouse.radius - distance) / this.mouse.radius;
-          const angle = Math.atan2(dy, dx);
-          p.x += Math.cos(angle) * force * 1.5;
-          p.y += Math.sin(angle) * force * 1.5;
-        }
-      }
-      
-      // Render
-      const currentRadius = p.radius + Math.sin(p.pulse) * 10;
-      const gradient = this.ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, currentRadius);
-      gradient.addColorStop(0, p.color);
-      gradient.addColorStop(1, 'transparent');
-      
-      this.ctx.beginPath();
-      this.ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
-      this.ctx.fillStyle = gradient;
-      this.ctx.fill();
+    this.blobs.forEach(blob => {
+      blob.update(this.canvas.width, this.canvas.height, this.mouse, this.time);
+      blob.draw(this.ctx);
     });
+    
+    requestAnimationFrame(() => this.animate());
   }
 }
 
