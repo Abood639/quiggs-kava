@@ -129,14 +129,13 @@ class ParticleBackground {
     this.resize();
     this.blobs = [];
     
-    // Create large, premium morphing blobs
-    // Emerald green blobs
+    // Create large, premium morphing blobs using green tones
     this.blobs.push(new MorphingBlob(
       this.canvas.width * 0.25,
       this.canvas.height * 0.3,
       180,
-      'rgba(5, 150, 105, 0.07)',
-      'rgba(5, 150, 105, 0.02)',
+      'rgba(4, 120, 87, 0.08)',
+      'rgba(4, 120, 87, 0.015)',
       0.001
     ));
     
@@ -144,18 +143,17 @@ class ParticleBackground {
       this.canvas.width * 0.75,
       this.canvas.height * 0.7,
       220,
-      'rgba(5, 150, 105, 0.06)',
-      'rgba(5, 150, 105, 0.01)',
+      'rgba(4, 120, 87, 0.07)',
+      'rgba(4, 120, 87, 0.01)',
       0.0008
     ));
     
-    // Amber/Gold blobs
     this.blobs.push(new MorphingBlob(
       this.canvas.width * 0.8,
       this.canvas.height * 0.25,
       200,
-      'rgba(217, 119, 6, 0.06)',
-      'rgba(217, 119, 6, 0.01)',
+      'rgba(5, 150, 105, 0.08)',
+      'rgba(5, 150, 105, 0.015)',
       0.0012
     ));
 
@@ -163,8 +161,8 @@ class ParticleBackground {
       this.canvas.width * 0.3,
       this.canvas.height * 0.8,
       160,
-      'rgba(180, 83, 9, 0.06)',
-      'rgba(180, 83, 9, 0.01)',
+      'rgba(5, 150, 105, 0.06)',
+      'rgba(5, 150, 105, 0.01)',
       0.0015
     ));
   }
