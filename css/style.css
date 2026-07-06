@@ -614,11 +614,11 @@ h1, h2, h3, h4 {
 
 .item-img-container {
   width: 100%;
-  height: auto;
+  max-width: 260px;
   aspect-ratio: 1.18;
+  margin: 0 auto 20px auto;
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 20px;
   position: relative;
   border: 1px solid var(--border-color);
   background: rgba(0, 0, 0, 0.02);
