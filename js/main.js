@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
+  window.mainJsLoaded = true;
   // Mobile Menu Toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
@@ -75,35 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
     animObserver.observe(el);
   });
 
-  // Menu Filtering Logic (for menu.html)
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const menuItems = document.querySelectorAll('.menu-item');
+  // Menu tab switching logic (Quiggs vs Chill Cawfee)
+  const menuTabs = document.querySelectorAll('.menu-tabs .tab-btn');
+  const menuCards = document.querySelectorAll('.menu-image-card');
 
-  if (tabButtons.length > 0 && menuItems.length > 0) {
-    // Show all items initially
-    filterMenuItems('all');
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        // Toggle active button class
-        tabButtons.forEach(b => b.classList.remove('active'));
+  if (menuTabs.length > 0 && menuCards.length > 0) {
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        // Toggle active tab button
+        menuTabs.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
 
-        // Filter items
-        const category = e.target.getAttribute('data-category');
-        filterMenuItems(category);
+        // Toggle active menu card
+        const selectedMenu = e.target.getAttribute('data-menu');
+        menuCards.forEach(card => {
+          if (card.id === `menu-${selectedMenu}`) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
       });
-    });
-  }
-
-  function filterMenuItems(category) {
-    menuItems.forEach(item => {
-      const itemCategory = item.getAttribute('data-category');
-      if (category === 'all' || itemCategory === category) {
-        item.classList.add('show');
-      } else {
-        item.classList.remove('show');
-      }
     });
   }
 
@@ -190,6 +183,12 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.disabled = false;
         }, 2000);
       }, 1500);
-    });
-  }
 });
+  }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

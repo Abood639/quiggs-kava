@@ -30,7 +30,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/background.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=2" defer></script>
 </head>
 <body>
   <!-- Interactive Canvas Background -->
@@ -72,11 +72,19 @@
       </div>
     </section>
 
+    <!-- Tabs Filter -->
+    <section class="container" style="padding-top: 0; padding-bottom: 30px;">
+      <div class="menu-tabs animate-on-scroll">
+        <button class="tab-btn active" data-menu="quiggs">Quiggs</button>
+        <button class="tab-btn" data-menu="cawfee">Chill Cawfee</button>
+      </div>
+    </section>
+
     <!-- Menu Showcase -->
     <section class="container" style="padding-top: 0;">
       <div class="menu-images-showcase">
         <!-- Elixirs Menu -->
-        <div class="menu-image-card animate-on-scroll">
+        <div id="menu-quiggs" class="menu-image-card animate-on-scroll active">
           <div class="menu-card-header">
             <h2 class="menu-card-title gradient-text">Euphoric Elixirs</h2>
             <p class="menu-card-subtitle">Traditionally prepared kava shells, kratom teas, and customized elixirs</p>
@@ -87,7 +95,7 @@
         </div>
 
         <!-- On Tap / Cawfee Menu -->
-        <div class="menu-image-card animate-on-scroll">
+        <div id="menu-cawfee" class="menu-image-card animate-on-scroll">
           <div class="menu-card-header">
             <h2 class="menu-card-title gradient-text">On Tap & Specialty</h2>
             <p class="menu-card-subtitle">Kava & kratom seltzers, mocktails, and fresh food pairings</p>

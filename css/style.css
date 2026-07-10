@@ -551,22 +551,58 @@ h1, h2, h3, h4 {
 }
 
 /* Menu Page Elements */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tab-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-dark);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--emerald), #047857);
+  color: white;
+  border-color: var(--emerald);
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.25);
+}
+
+.tab-btn[data-menu="cawfee"].active {
+  background: linear-gradient(135deg, var(--amber), #b45309);
+  color: white;
+  border-color: var(--amber);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.25);
+}
+
 .menu-images-showcase {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: stretch;
-  gap: 40px;
+  align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 550px;
   margin: 0 auto 60px auto;
 }
 
 .menu-image-card {
-  flex: 1;
-  min-width: 300px;
-  max-width: 550px;
-  display: flex;
+  width: 100%;
+  display: none;
   flex-direction: column;
   align-items: center;
   background: var(--bg-card);
@@ -577,10 +613,14 @@ h1, h2, h3, h4 {
   transition: var(--transition-smooth);
 }
 
-.menu-image-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-hover);
-  box-shadow: 0 20px 40px rgba(4, 120, 87, 0.08);
+.menu-image-card.active {
+  display: flex;
+  animation: menuFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .menu-card-header {
@@ -627,19 +667,6 @@ h1, h2, h3, h4 {
 
 .menu-view-img:hover {
   transform: scale(1.02);
-}
-
-@media (max-width: 900px) {
-  .menu-images-showcase {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .menu-image-card {
-    max-width: 550px;
-    width: 100%;
-  }
 }
 
 /* Events Page Elements */
