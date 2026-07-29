@@ -1168,16 +1168,23 @@ textarea.form-control {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  aspect-ratio: 1 / 1;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
   background: var(--bg-light);
   transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .cawfee-menu-item:hover {
   transform: translateY(-6px);
   border-color: var(--border-hover);
   box-shadow: 0 15px 30px rgba(180, 83, 9, 0.08);
+}
+
+.menu-item-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .cawfee-menu-img {
@@ -1189,4 +1196,24 @@ textarea.form-control {
 
 .cawfee-menu-item:hover .cawfee-menu-img {
   transform: scale(1.05);
+}
+
+.menu-item-info {
+  padding: 16px;
+  background: #ffffff;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.3;
 }
