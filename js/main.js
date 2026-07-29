@@ -1,21 +1,63 @@
 const initApp = () => {
   window.mainJsLoaded = true;
-  // Mobile Menu Toggle
+  // Mobile Glassmorphic Drawer Controller
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
-  
+  const navOverlay = document.querySelector('.nav-overlay');
+
+  const closeMenu = () => {
+    if (!menuToggle || !navMenu) return;
+    menuToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    if (navOverlay) {
+      navOverlay.classList.remove('active');
+      navOverlay.setAttribute('aria-hidden', 'true');
+    }
+    menuToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = '';
+  };
+
+  const openMenu = () => {
+    if (!menuToggle || !navMenu) return;
+    menuToggle.classList.add('active');
+    navMenu.classList.add('active');
+    if (navOverlay) {
+      navOverlay.classList.add('active');
+      navOverlay.setAttribute('aria-hidden', 'false');
+    }
+    menuToggle.setAttribute('aria-expanded', 'true');
+    navMenu.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+  };
+
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.contains('active');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    // Close mobile menu when link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+    // Close when overlay is clicked
+    if (navOverlay) {
+      navOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Close mobile menu when any nav link or CTA inside drawer is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close mobile menu on ESC key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
     });
   }
 

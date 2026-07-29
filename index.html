@@ -99,7 +99,7 @@
         <img src="assets/ChatGPT-Image-Sep-7-2025-09_18_59-PM-2 (2).webp" alt="Quigs Kava Lounge" class="nav-logo">
         <span class="nav-title">Quigs</span>
       </a>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu" aria-hidden="true">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="kava.html" class="nav-link">Kava</a></li>
@@ -107,14 +107,16 @@
         <li><a href="menu.html" class="nav-link">Menu</a></li>
         <li><a href="events.html" class="nav-link">Events</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-cta-item"><a href="https://www.ubereats.com/store/chill-cawfee-riverview/8v0jd14UXYOxqRMc4G4RRA" target="_blank" rel="noopener noreferrer" class="btn btn-amber nav-cta-btn">Order Online</a></li>
       </ul>
-      <button class="menu-toggle" aria-label="Toggle Menu">
+      <button class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="nav-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </nav>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <!-- Content Wrapper -->
   <main class="content-wrapper">
