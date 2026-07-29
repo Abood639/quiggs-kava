@@ -644,7 +644,8 @@ h1, h2, h3, h4 {
   box-shadow: 0 4px 15px rgba(5, 150, 105, 0.25);
 }
 
-.tab-btn[data-menu="cawfee"].active {
+.tab-btn[data-menu="cawfee"].active,
+.tab-btn[data-menu="food"].active {
   background: linear-gradient(135deg, var(--amber), #b45309);
   color: white;
   border-color: var(--amber);
@@ -672,11 +673,9 @@ h1, h2, h3, h4 {
   transition: var(--transition-smooth);
 }
 
-#menu-quiggs {
-  max-width: 1100px;
-}
-
-#menu-cawfee {
+#menu-quiggs,
+#menu-cawfee,
+#menu-food {
   max-width: 1100px;
 }
 
