@@ -356,7 +356,7 @@ h1, h2, h3, h4 {
 /* Hero Section */
 .hero-grid {
   display: grid;
-  grid-template-cols: 1.2fr 0.8fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
   min-height: calc(100vh - 200px);
@@ -440,7 +440,7 @@ h1, h2, h3, h4 {
 /* Feature Grid */
 .feature-grid {
   display: grid;
-  grid-template-cols: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 32px;
   margin-top: 40px;
 }
@@ -492,7 +492,7 @@ h1, h2, h3, h4 {
 /* About Page Columns */
 .about-columns {
   display: grid;
-  grid-template-cols: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
@@ -551,7 +551,7 @@ h1, h2, h3, h4 {
 /* About Lounge Gallery */
 .lounge-gallery {
   display: grid;
-  grid-template-cols: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 48px;
   width: 100%;
@@ -601,7 +601,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 900px) {
   .lounge-gallery {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
     gap: 30px;
   }
   
@@ -797,7 +797,7 @@ h1, h2, h3, h4 {
 
 .events-grid {
   display: grid;
-  grid-template-cols: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
   margin-top: 40px;
 }
@@ -822,7 +822,7 @@ h1, h2, h3, h4 {
 /* Contact & Visit Us Page */
 .contact-layout {
   display: grid;
-  grid-template-cols: 1fr 1.2fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 48px;
   align-items: stretch;
 }
@@ -996,7 +996,7 @@ textarea.form-control {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-cols: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -1067,7 +1067,7 @@ textarea.form-control {
 /* Responsive Styles */
 @media (max-width: 992px) {
   .hero-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
     padding-top: 40px;
@@ -1083,16 +1083,15 @@ textarea.form-control {
   }
   
   .about-columns {
-    grid-template-cols: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
   }
   
   .contact-layout {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   
   .footer-container {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 }
