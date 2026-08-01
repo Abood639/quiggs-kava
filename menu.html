@@ -31,6 +31,24 @@
   <link rel="canonical" href="https://quigskavalounge.com/menu">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .menu-board-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(11, 25, 95, 0.1);
+      transition: var(--transition-smooth);
+    }
+    .menu-board-img:hover {
+      transform: scale(1.005);
+      box-shadow: var(--shadow-lg);
+    }
+    .menu-actions {
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+  </style>
   <script src="js/background.js" defer></script>
   <script src="js/main.js?v=2" defer></script>
 </head>
@@ -94,8 +112,19 @@
           <div class="menu-card-header">
             <h2 class="menu-card-title gradient-text">Quigs Kava Lounge</h2>
             <p class="menu-card-subtitle">Earthy noble kavas, euphoric, seltzers, and mocktails</p>
-          </div>
-          <!-- Quiggs Drink Gallery Header -->
+                      </div>
+
+                      <!-- Euphoric Elixirs Menu Board -->
+                      <div class="menu-images-row single-image" style="margin-bottom: 8px;">
+                        <div class="menu-image-frame portrait-frame">
+                          <img src="euphoric-elixir-menu.webp" alt="Euphoric Elixirs — Kava & Euphoric Tea Menu" class="menu-board-img">
+                        </div>
+                      </div>
+                      <div class="menu-actions" style="text-align: center;">
+                        <a href="euphoric-elixir-menu.webp" download="Euphoric-Elixirs-Menu.webp" class="btn btn-primary">Download Kava Menu (PNG)</a>
+                      </div>
+
+                      <!-- Quiggs Drink Gallery Header -->
           <div class="menu-card-header" style="border-top: 1px solid var(--border-color); padding-top: 40px; margin-top: 20px; width: 100%;">
             <h3 class="menu-card-title gradient-text" style="font-size: 1.75rem;">Drink Highlights</h3>
             <p class="menu-card-subtitle">Visual gallery of our specialty botanical teas and elixirs</p>
@@ -243,9 +272,20 @@
         <div id="menu-food" class="menu-image-card animate-on-scroll">
           <div class="menu-card-header">
             <h2 class="menu-card-title gradient-text">Food & Bakery</h2>
-            <p class="menu-card-subtitle">Fresh pastries, sweet treats, and savory highlights from our lounge</p>
-          </div>
-          <div class="cawfee-menu-grid" style="padding: 0 40px 40px 40px; margin-top: 0; width: 100%;">
+                        <p class="menu-card-subtitle">Fresh pastries, sweet treats, and savory highlights from our lounge</p>
+                      </div>
+
+                      <!-- Bakery & Bites Menu Board -->
+                      <div class="menu-images-row single-image" style="margin-bottom: 8px;">
+                        <div class="menu-image-frame portrait-frame">
+                          <img src="bakery-and-bites-menu.webp" alt="Bakery &amp; Bites Menu" class="menu-board-img">
+                        </div>
+                      </div>
+                      <div class="menu-actions" style="text-align: center;">
+                        <a href="bakery-and-bites-menu.webp" download="Bakery-and-Bites-Menu.webp" class="btn btn-primary">Download Food Menu (PNG)</a>
+                      </div>
+
+                      <div class="cawfee-menu-grid" style="padding: 0 40px 40px 40px; margin-top: 0; width: 100%;">
             <div class="cawfee-menu-item">
               <div class="menu-item-image-wrapper">
                 <img src="assets/menu_gallery/menu_1PNczul9fRbEcHkASrl6vyJTa8guqUt46.webp" alt="Blueberry Cheesecake Muffin" class="cawfee-menu-img" loading="lazy">
